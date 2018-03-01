@@ -9269,7 +9269,7 @@ var _dillonkearns$elm_electron$Electron_Generator_Ts$generateInterface = functio
 								'\n}'))))));
 	}
 };
-var _dillonkearns$elm_electron$Electron_Generator_Ts$prefix = '\nimport { ipcMain } from \'electron\'\n\nclass Ipc {\n  static setupIpcMessageHandler(onIpcMessage: (elmIpc: ElmIpc, event?: any) => any) {\n    ipcMain.on(\'elm-electron-ipc\', (event: any, payload: any) => {\n      onIpcMessage(payload, event)\n    })\n  }\n}\n\nexport { Ipc, ElmIpc }\n    ';
+var _dillonkearns$elm_electron$Electron_Generator_Ts$prefix = '\nimport { ipcMain, IpcMessageEvent } from \'electron\'\n\nclass Ipc {\n  static setupIpcMessageHandler(onIpcMessage: (event: IpcMessageEvent, elmIpc: ElmIpc) => any) {\n    ipcMain.on(\'elm-electron-ipc\', (event: any, payload: any) => {\n      onIpcMessage(event, payload)\n    })\n  }\n}\n\nexport { Ipc, ElmIpc }\n    ';
 var _dillonkearns$elm_electron$Electron_Generator_Ts$generate = function (msgs) {
 	return A2(
 		_elm_lang$core$String$join,

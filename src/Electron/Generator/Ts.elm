@@ -6,12 +6,12 @@ import Electron.Ipc
 prefix : String
 prefix =
     """
-import { ipcMain } from 'electron'
+import { ipcMain, IpcMessageEvent } from 'electron'
 
 class Ipc {
-  static setupIpcMessageHandler(onIpcMessage: (elmIpc: ElmIpc, event?: any) => any) {
+  static setupIpcMessageHandler(onIpcMessage: (event: IpcMessageEvent, elmIpc: ElmIpc) => any) {
     ipcMain.on('elm-electron-ipc', (event: any, payload: any) => {
-      onIpcMessage(payload, event)
+      onIpcMessage(event, payload)
     })
   }
 }

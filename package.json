@@ -1,12 +1,14 @@
 {
   "name": "elm-electron",
   "version": "0.0.3",
-  "description": "Code generator for type-safe elm-electron interprocess messages.",
+  "description":
+    "Code generator for type-safe elm-electron interprocess messages.",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test-unit && npm run test-e2e",
+    "test": "yarn test-unit && yarn test-e2e",
     "test-unit": "elm test",
-    "test-e2e": "tsc tests/e2e/e2e.ts && mocha --timeout 5000 ./tests/e2e/e2e.js",
+    "test-e2e":
+      "tsc tests/e2e/e2e.ts && mocha --timeout 5000 ./tests/e2e/e2e.js",
     "build": "webpack"
   },
   "keywords": ["elm", "electron", "ipc", "typescript"],
