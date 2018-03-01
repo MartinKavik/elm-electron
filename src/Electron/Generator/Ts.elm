@@ -9,9 +9,9 @@ prefix =
 import { ipcMain } from 'electron'
 
 class Ipc {
-  static setupIpcMessageHandler(onIpcMessage: (elmIpc: ElmIpc) => any) {
+  static setupIpcMessageHandler(onIpcMessage: (elmIpc: ElmIpc, event?: any) => any) {
     ipcMain.on('elm-electron-ipc', (event: any, payload: any) => {
-      onIpcMessage(payload)
+      onIpcMessage(payload, event)
     })
   }
 }
